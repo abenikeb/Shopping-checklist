@@ -39,13 +39,13 @@ class Register extends Login {
   render() {
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Sign up</h1>
 
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("username", "Username")}
           {this.renderInput("password", "Password", "password")}
           {this.renderInput("name", "Name")}
-          {this.renderButton("Login")}
+          {this.renderButton("submit")}
         </form>
       </div>
     );

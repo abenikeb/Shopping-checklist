@@ -15,9 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", [auth], async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
+  console.log("Body:", req.body);
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Invalid genre.");
 
@@ -37,8 +35,7 @@ router.post("/", [auth], async (req, res) => {
 });
 
 router.put("/:id", [auth], async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  console.log("Body Update:", req.body);
 
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Invalid genre.");

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 const NavBar = ({ user }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Vidly
+        My-Movies
       </Link>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
@@ -17,11 +17,6 @@ const NavBar = ({ user }) => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/customers">
               Customers
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/rental">
-              Rental
             </NavLink>
           </li>
           {!user && (
@@ -55,7 +50,7 @@ const NavBar = ({ user }) => {
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

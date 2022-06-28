@@ -1,30 +1,33 @@
-import React, { Component } from 'react'
-import Like from './common/like'
-import Table from './common/table'
-import auth from './../services/authService'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import Like from "./common/like";
+import Date_ from "./common/Date_";
+import Table from "./common/table";
+import auth from "./../services/authService";
+import { Link } from "react-router-dom";
 
 class MoviesTable extends Component {
   columns = [
     {
-      path: 'title',
-      label: 'Title',
+      path: "title",
+      label: "Title",
       content: (movie) => (
         <Link to={`/movies/${movie._id}`}>{movie.title}</Link>
       ),
     },
-    { path: 'genre.name', label: 'Genre' },
-    { path: 'numberInStock', label: 'Stock' },
-    { path: 'dailyRentalRate', label: 'Rate' },
+    { path: "genre.name", label: "Genre" },
+    { path: "numberInStock", label: "Stock" },
     {
-      key: 'like',
-      content: (movie) => (
-        <Like liked={movie.liked} onClick={() => this.props.onLike(movie)} />
-      ),
+      key: "like",
+      label: "Bought",
+      content: (movie) => <Like bought={movie.bought} />,
     },
-  ]
+    {
+      label: "Buying Date",
+      content: (movie) => <Date_ date={movie.date} />,
+    },
+  ];
   deleteCol = {
-    key: 'delete',
+    key: "delete",
     content: (movie) => (
       <button
         onClick={() => this.props.onDelete(movie)}
@@ -33,17 +36,17 @@ class MoviesTable extends Component {
         Delete
       </button>
     ),
-  }
+  };
 
   constructor() {
-    super()
-    const user = auth.getUserData()
-    if (user && user.isAdmin) {
-      this.columns.push(this.deleteCol)
+    super();
+    const user = auth.getUserData();
+    if (user) {
+      this.columns.push(this.deleteCol);
     }
   }
   render() {
-    const { movies, onSort, sortColumn } = this.props
+    const { movies, onSort, sortColumn } = this.props;
     return (
       <Table
         data={movies}
@@ -51,8 +54,8 @@ class MoviesTable extends Component {
         columns={this.columns}
         sortColumn={sortColumn}
       />
-    )
+    );
   }
 }
 
-export default MoviesTable
+export default MoviesTable;

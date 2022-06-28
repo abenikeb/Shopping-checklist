@@ -19,12 +19,7 @@ class MovieForm extends Login {
     _id: joi.string(),
     title: joi.string().required().label("Title"),
     genreId: joi.string().required().label("Genres"),
-    numberInStock: joi
-      .string()
-      .required()
-      .min(0)
-      .max(100)
-      .label("NumberInStock"),
+    numberInStock: joi.required().label("NumberInStock"),
     dailyRentalRate: joi
       .string()
       .required()
