@@ -78,6 +78,24 @@ class Login extends Component {
       />
     );
   }
+
+  renderChecked(name, label, options) {
+    const { data, errors, type = "text" } = this.state;
+    return (
+      <div>
+        <label htmlFor={name}>{label}</label>
+        <br />
+        <input
+          type="checkbox"
+          id="bought"
+          name={name}
+          value={data[name]}
+          label={label}
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+  }
 }
 
 export default Login;

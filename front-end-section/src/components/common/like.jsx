@@ -2,7 +2,7 @@ import React from "react";
 
 const Like = ({ bought }) => {
   let src = "checkbox-checked";
-  src += bought === true ? ".jpg" : "-o.jpg";
+  src += bought === true ? ".jpg" : "-0.jpg";
   return (
     <div>
       <img src={src} style={{ width: 15 }} alt="" />

@@ -7,17 +7,17 @@ const data = [
   {
     name: "Comedy",
     movies: [
-      { title: "One Dollar", numberInStock: 5 },
-      { title: "Fiker Selam", numberInStock: 10 },
-      { title: "Ye Arad Lij", numberInStock: 15 },
+      { title: "One Dollar", numberInStock: 5, bought: true },
+      { title: "Fiker Selam", numberInStock: 10, bought: true },
+      { title: "Ye Arad Lij", numberInStock: 15, bought: false },
     ],
   },
   {
     name: "Action",
     movies: [
       { title: "Anchin Wedje", numberInStock: 5 },
-      { title: "Ye Dia Lij", numberInStock: 10 },
-      { title: "The Avengers", numberInStock: 15 },
+      { title: "Ye Dia Lij", numberInStock: 10, bought: false },
+      { title: "The Avengers", numberInStock: 15, bought: true },
     ],
   },
   {

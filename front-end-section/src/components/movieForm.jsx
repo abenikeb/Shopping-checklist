@@ -9,6 +9,7 @@ class MovieForm extends Login {
     data: {
       title: "",
       genreId: "",
+      bought: "",
       numberInStock: "",
       dailyRentalRate: "",
     },
@@ -72,6 +73,7 @@ class MovieForm extends Login {
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("title", "Title")}
           {this.renderSelect("genreId", "Genere", this.state.geners)}
+          {this.renderChecked("bought", "Is Bought", this.state.geners)}
           {this.renderInput("numberInStock", "Number in Stock", "number")}
           {this.renderInput("dailyRentalRate", "Rate")}
           {this.renderButton("Save")}
