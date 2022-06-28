@@ -1,6 +1,8 @@
 import http from "./httpService";
 import jwtDecode from "jwt-decode";
-import { apiEndpoint } from "../config.json";
+// import apiEndpoint from "../config.json";
+
+const apiEndpoint = "http://localhost:3900/api";
 
 const apiUrl = apiEndpoint + "/auth";
 const token = "token";
