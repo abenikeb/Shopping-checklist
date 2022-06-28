@@ -22,6 +22,10 @@ const Movie = mongoose.model(
       min: 0,
       max: 255,
     },
+    bought: {
+      type: Boolean,
+      default: false,
+    },
     date: {
       type: Date,
       required: true,
