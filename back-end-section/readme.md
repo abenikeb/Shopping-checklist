@@ -1,6 +1,6 @@
 ## Introduction
 
-This project is the backend of Shopping-checklist, an imaginary movie shopping app.
+This project is the backend of Shopping-checklist, an imaginary Movie(Video) shopping app.
 
 This is the implementation of Movies-Shopping-checklist in Node.js.
 

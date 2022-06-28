@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+## Introduction
+
+This project is the Front-End of Shopping-checklist, an imaginary Movie(Video) shopping app.
+
+This is the implementation of Movies-Shopping-checklist in React.js.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
