@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 class MoviesTable extends Component {
   columns = [
     {
+      key: "like",
+      label: "Bought",
+      content: (movie) => <Like bought={movie.bought} />,
+    },
+    {
       path: "title",
       label: "Title",
       content: (movie) => (
@@ -16,11 +21,6 @@ class MoviesTable extends Component {
     },
     { path: "genre.name", label: "Genre" },
     { path: "numberInStock", label: "Stock" },
-    {
-      key: "like",
-      label: "Bought",
-      content: (movie) => <Like bought={movie.bought} />,
-    },
     {
       label: "Buying Date",
       content: (movie) => <Date_ date={movie.date} />,

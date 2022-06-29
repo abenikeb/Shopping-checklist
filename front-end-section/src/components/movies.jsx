@@ -28,6 +28,7 @@ class Movies extends Component {
     const { data: movies } = await getMovies();
     this.setState({ movies, genres });
   }
+
   handleDelete = async (movie) => {
     const orginalState = this.state.movies;
 
@@ -42,6 +43,7 @@ class Movies extends Component {
       this.setState({ movies: orginalState });
     }
   };
+
   handleLike = (movie) => {
     const movies = [...this.state.movies];
     const index = movies.indexOf(movie);
@@ -49,18 +51,23 @@ class Movies extends Component {
     movies[index].liked = !movies[index].liked;
     this.setState({ movies });
   };
+
   handlePage = (page) => {
     this.setState({ currentPage: page });
   };
+
   handleGenreSelect = (genre) => {
     this.setState({ selectedGenre: genre, searchQuery: "", currentPage: 1 });
   };
+
   handleSearch = (query) => {
     this.setState({ searchQuery: query, selectedGenre: null, currentPage: 1 });
   };
+
   handleSort = (sortColumn) => {
     this.setState({ sortColumn });
   };
+
   getPageData = () => {
     const {
       currentPage,
@@ -96,7 +103,7 @@ class Movies extends Component {
       searchQuery,
       selectedGenre,
     } = this.state;
-    // if (count === 0) return <p>ther is no tags</p>;
+    if (count === 0) return <p>ther is no tags</p>;
 
     const { totalCount, movies } = this.getPageData();
     return (
