@@ -76,11 +76,12 @@ class MovieForm extends Login {
         <h1>Movieform: </h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("title", "Title")}
-          {this.renderSelect("genreId", "Genere", this.state.geners)}
+          {this.renderSelect("genreId", "Category", this.state.geners)}
+          {this.renderInput("price", "Price", "number")}
           {this.renderInput("numberInStock", "Number in Stock", "number")}
           {this.renderInput("dailyRentalRate", "Rate")}
           {this.props.match.params.id != "new"
-            ? this.renderChecked("bought", "Is Bought", this.state.geners)
+            ? this.renderChecked("bought", "Is Bought")
             : ""}
           {this.renderButton("Save")}
         </form>
