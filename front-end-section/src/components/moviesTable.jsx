@@ -9,7 +9,7 @@ class MoviesTable extends Component {
   columns = [
     {
       key: "like",
-      label: "Bought",
+      label: "SOLD",
       content: (movie) => <Like bought={movie.bought} />,
     },
     {
