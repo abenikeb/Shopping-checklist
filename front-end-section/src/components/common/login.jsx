@@ -79,8 +79,8 @@ class Login extends Component {
     );
   }
 
-  renderChecked(name, label, options) {
-    const { data, errors, type = "text" } = this.state;
+  renderChecked(name, label) {
+    const { data, errors } = this.state;
     return (
       <div>
         <label htmlFor={name}>{label}</label>
